@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+float calc_expenses(int qty, float price) {
+    float total = qty * price;
+    float discounted = total * 0.90f; // 10% discount
+    if (qty > 100 || discounted > 5000)
+        discounted = discounted * 0.90f; // extra 10%
+    return discounted;
+}
+
+int main() {
+    int qty;
+    float price;
+    printf("Enter quantity and price per item: ");
+    scanf("%d %f", &qty, &price);
+    printf("Total expenses = %.2f\n", calc_expenses(qty, price));
+    return 0;
+}
