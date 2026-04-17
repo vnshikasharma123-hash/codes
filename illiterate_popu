@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void illiterate(int popu) {
+    int men = (popu * 52) / 100;
+    int women = popu - men;
+    int literate_men = (popu * 35) / 100;
+    int total_literate = (popu * 48) / 100;
+    int literate_women = total_literate - literate_men;
+    int illiterate_men = men - literate_men;
+    int illiterate_women = women - literate_women;
+
+    printf("Illiterate Men = %d\nIlliterate Women = %d\n", illiterate_men, illiterate_women);
+}
+
+int main() {
+    int popu = 80000;
+    illiterate(popu);
+    return 0;
+}
