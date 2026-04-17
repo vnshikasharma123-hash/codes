@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void calc_percentage(int marks[], int n, int *aggregate, float *percentage) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) sum += marks[i];
+    *aggregate = sum;
+    *percentage = (sum / (float)(n * 100)) * 100;
+}
+
+int main() {
+    int marks[5], aggregate;
+    float percentage;
+    printf("Enter marks of 5 subjects: ");
+    for (int i = 0; i < 5; i++) scanf("%d", &marks[i]);
+    calc_percentage(marks, 5, &aggregate, &percentage);
+    printf("Aggregate = %d\nPercentage = %.2f%%\n", aggregate, percentage);
+    return 0;
+}
