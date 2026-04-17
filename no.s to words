@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Function to print single digits
+void printDigit(int d) {
+    char *words[]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+    printf("%s ", words[d]);
+}
+
+// Function to print two-digit numbers
+void printTwoDigits(int num) {
+    char *tens[]={"","Ten","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+    char *teens[]={"Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"};
+
+    if(num < 10) printDigit(num);
+    else if(num < 20) printf("%s ", teens[num-10]);
+    else {
+        printf("%s ", tens[num/10]);
+        if(num%10 != 0) printDigit(num%10);
+    }
+}
+
+// Function to print three-digit numbers
+void printThreeDigits(int num) {
+    if(num >= 100) {
+        printDigit(num/100);
+        printf("Hundred ");
+        num %= 100;
+    }
+    if(num > 0) printTwoDigits(num);
+}
+
+// Main conversion function
+void convertToWords(int num) {
+    if(num >= 1000) {
+        printThreeDigits(num/1000);
+        printf("Thousand ");
+        num %= 1000;
+    }
+    if(num > 0) printThreeDigits(num);
+}
+
+int main() {
+    int num;
+    printf("Enter number: ");
+    scanf("%d",&num);
+    convertToWords(num);
+    return 0;
+}
