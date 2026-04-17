@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+struct date {
+    int d;
+    int m;
+    int y;
+};
+
+struct student {
+    char name[30];
+    int age;
+    float cgpa;
+    char mo_no[15];   
+    char add[100];
+    struct date dob;  
+};
+
+int main() {
+    // Initialize date
+    struct date dob = {24, 6, 2009};
+    struct student s1 = {
+        "Diwaker",
+        16,
+        9.0,
+        "8279316011",
+        "Sharda University",
+        dob
+    };
+
+    printf("Name: %s\n", s1.name);
+    printf("Age: %d\n", s1.age);
+    printf("CGPA: %.2f\n", s1.cgpa);
+    printf("Mobile No: %s\n", s1.mo_no);
+    printf("Address: %s\n", s1.add);
+    printf("Date of Birth: %d-%d-%d\n", s1.dob.d, s1.dob.m, s1.dob.y);
+
+    return 0;
+}
