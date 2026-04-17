@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+// function to add two complex numbers
+void add(float r1, float i1, float r2, float i2, float *rsum, float *isum) {
+    *rsum = r1 + r2;
+    *isum = i1 + i2;
+}
+
+int main() {
+    float r1, i1, r2, i2, rs, is;
+    printf("Enter first complex number (real imag): ");
+    scanf("%f %f", &r1, &i1);
+    printf("Enter second complex number (real imag): ");
+    scanf("%f %f", &r2, &i2);
+
+    add(r1, i1, r2, i2, &rs, &is);
+
+    printf("Sum = %.2f + %.2fi\n", rs, is);
+    return 0;
+}
