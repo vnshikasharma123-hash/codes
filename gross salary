@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+void Tgross(float basic, float *da, float *hra, float *gross) {
+    *da = 0.40 * basic;
+    *hra = 0.20 * basic;
+    *gross = basic + *da + *hra;
+}
+
+int main() {
+    float basic, da, hra, gross;
+    printf("Enter basic salary: ");
+    scanf("%f", &basic);          // simple input, no extra checks
+    Tgross(basic, &da, &hra, &gross);
+    printf("DA = %.2f\nHRA = %.2f\nGross Salary = %.2f\n", da, hra, gross);
+    return 0;
+}
