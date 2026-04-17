@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void division(int amt) {
+    int n100 = amt / 100;
+    amt %= 100;
+    int n50 = amt / 50;
+    amt %= 50;
+    int n10 = amt / 10;
+    printf("100s = %d\n50s = %d\n10s = %d\n", n100, n50, n10);
+}
+
+int main() {
+    int amount;
+    printf("Enter amount: ");
+    scanf("%d", &amount);
+    division(amount);
+    return 0;
+}
